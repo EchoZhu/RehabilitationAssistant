@@ -24,19 +24,19 @@ export default function StatisticsPage() {
       setTodayProgress({
         date: today,
         walking: {
-          completed: todayRecords.reduce((sum, r) => sum + (r.walking?.duration || 0), 0),
+          completed: todayRecords.reduce((sum: number, r) => sum + (r.walking?.duration || 0), 0),
           target: goals.walking?.targetDuration || 30,
           achieved: false,
         },
         fistRaise: {
-          completedSets: todayRecords.reduce((sum, r) => sum + (r.fistRaise?.sets || 0), 0),
-          completedReps: todayRecords.reduce((sum, r) => sum + (r.fistRaise?.reps || 0), 0),
+          completedSets: todayRecords.reduce((sum: number, r) => sum + (r.fistRaise?.sets || 0), 0),
+          completedReps: todayRecords.reduce((sum: number, r) => sum + (r.fistRaise?.reps || 0), 0),
           targetSets: goals.fistRaise?.targetSets || 3,
           targetReps: goals.fistRaise?.targetReps || 10,
           achieved: false,
         },
         eyeGaze: {
-          completed: todayRecords.reduce((sum, r) => sum + (r.eyeGaze?.count || 0), 0),
+          completed: todayRecords.reduce((sum: number, r) => sum + (r.eyeGaze?.count || 0), 0),
           target: goals.eyeGaze?.targetCount || 20,
           achieved: false,
         },

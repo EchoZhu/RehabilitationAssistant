@@ -53,10 +53,10 @@ export function calculateTodayProgress(): DailyProgress {
   const todayRecords = getRecordsByDate(today);
 
   // 聚合今日的训练数据
-  const walkingTotal = todayRecords.reduce((sum, r) => sum + (r.walking?.duration || 0), 0);
-  const fistRaiseSets = todayRecords.reduce((sum, r) => sum + (r.fistRaise?.sets || 0), 0);
-  const fistRaiseReps = todayRecords.reduce((sum, r) => sum + (r.fistRaise?.reps || 0), 0);
-  const eyeGazeTotal = todayRecords.reduce((sum, r) => sum + (r.eyeGaze?.count || 0), 0);
+  const walkingTotal = todayRecords.reduce((sum: number, r) => sum + (r.walking?.duration || 0), 0);
+  const fistRaiseSets = todayRecords.reduce((sum: number, r) => sum + (r.fistRaise?.sets || 0), 0);
+  const fistRaiseReps = todayRecords.reduce((sum: number, r) => sum + (r.fistRaise?.reps || 0), 0);
+  const eyeGazeTotal = todayRecords.reduce((sum: number, r) => sum + (r.eyeGaze?.count || 0), 0);
 
   return {
     date: today,
